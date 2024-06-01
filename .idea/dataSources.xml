@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="EcoTrack@localhost" uuid="d668606c-792d-4db2-9201-b294358557d4">
+    <data-source source="LOCAL" name="EcoTrack@localhost" uuid="b65e9efc-fe0f-4735-bb57-384bc9c70d7c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
