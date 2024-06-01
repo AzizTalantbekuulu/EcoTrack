@@ -51,39 +51,40 @@ python manage.py runserver
 
 ### Эндпоинты API
 
-- **Регистрация нового пользователя:** `POST /api/register/`
-- **Логин пользователя:** `POST /api/login/`
-- **Получение нового доступного токена:** `POST /api/token/refresh/`
+- **Регистрация нового пользователя:** `POST /eco/register/`
+- **Логин пользователя:** `POST /eco/login/`
+- **Получение нового доступного токена:** `POST /eco/token/refresh/`
 - **Пользователи:**
-  - `GET /api/users/`
-  - `POST /api/users/`
-  - `GET /api/users/<user_id>/`
-  - `PUT /api/users/<user_id>/`
-  - `PATCH /api/users/<user_id>/`
-  - `DELETE /api/users/<user_id>/`
+  - `GET /eco/users/`
+  - `POST /eco/users/`
+  - `GET /eco/users/<user_id>/`
+  - `PUT /eco/users/<user_id>/`
+  - `PATCH /eco/users/<user_id>/`
+  - `DELETE /eco/users/<user_id>/`
 - **Датчики:**
-  - `GET /api/sensor/`
-  - `POST /api/sensor/`
-  - `GET /api/sensor/<sensor_id>/`
-  - `PUT /api/sensor/<sensor_id>/`
-  - `PATCH /api/sensor/<sensor_id>/`
-  - `DELETE /api/sensor/<sensor_id>/`
+  - `GET /eco/sensor/`
+  - `POST /eco/sensor/`
+  - `GET /eco/sensor/<sensor_id>/`
+  - `PUT /eco/sensor/<sensor_id>/`
+  - `PATCH /eco/sensor/<sensor_id>/`
+  - `DELETE /eco/sensor/<sensor_id>/`
 - **Данные для датчиков:**
-  - `GET /api/sensor/<sensor_id>/data/`
-  - `POST /api/sensor/<sensor_id>/data/`
-  - `GET /api/sensor/<sensor_id>/data/<data_id>/`
-  - `PUT /api/sensor/<sensor_id>/data/<data_id>/`
-  - `PATCH /api/sensor/<sensor_id>/data/<data_id>/`
-  - `DELETE /api/sensor/<sensor_id>/data/<data_id>/`
+  - `GET /eco/sensor/<sensor_id>/data/`
+  - `POST /eco/sensor/<sensor_id>/data/`
+  - `GET /eco/sensor/<sensor_id>/data/<data_id>/`
+  - `PUT /eco/sensor/<sensor_id>/data/<data_id>/`
+  - `PATCH /eco/sensor/<sensor_id>/data/<data_id>/`
+  - `DELETE /eco/sensor/<sensor_id>/data/<data_id>/`
 - **Оповещения:**
-  - `GET /api/sensor/<sensor_id>/alerts/`
-  - `POST /api/sensor/<sensor_id>/alerts/`
-  - `GET /api/sensor/<sensor_id>/alerts/<alerts_id>/`
-  - `PUT /api/sensor/<sensor_>/alerts/<alerts_id>/`
-  - `PATCH /api/sensor/<sensor_id>/alerts/<alerts_id>/`
-  - `DELETE /api/sensor/<sensor_id>/alerts/<alerts_id>/`
+  - `GET /eco/sensor/<sensor_id>/alerts/`
+  - `POST /eco/sensor/<sensor_id>/alerts/`
+  - `GET /eco/sensor/<sensor_id>/alerts/<alerts_id>/`
+  - `PUT /eco/sensor/<sensor_>/alerts/<alerts_id>/`
+  - `PATCH /eco/sensor/<sensor_id>/alerts/<alerts_id>/`
+  - `DELETE /eco/sensor/<sensor_id>/alerts/<alerts_id>/`
 
 Каждый эндпоинт требует аутентификации через токен. Для этого в заголовках запроса необходимо указать `Authorization: Bearer <access_token>`.
 
 ## Github
+- https://github.com/AzizTalantbekuulu/EcoTrack
 
