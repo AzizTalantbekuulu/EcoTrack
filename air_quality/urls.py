@@ -1,8 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from .views import (
-    RegisterView, LoginView, UserListCreateView, UserDetailView,
-    SensorDetailView, SensorListCreateView, DataListCreateView,
-    DataDetailView, AlertListCreateView, AlertDetailView
+    RegisterView, UserListCreateView, UserDetailView,
+    SensorListCreateView, SensorDetailView,
+    DataListCreateView, DataDetailView,
+    AlertListCreateView, AlertDetailView, LoginView
 )
 
 urlpatterns = [

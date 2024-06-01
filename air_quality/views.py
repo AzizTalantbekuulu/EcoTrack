@@ -1,11 +1,12 @@
-from .models import Sensor, Data, Alert, CustomUser
-from .serializers import SensorSerializer, DataSerializer, AlertSerializer, UserSerializer, RegisterSerializer
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate
+from .models import CustomUser, Sensor, Data, Alert
+from .serializers import UserSerializer, SensorSerializer, DataSerializer, AlertSerializer, RegisterSerializer
+
 
 class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
@@ -29,7 +30,7 @@ class LoginView(APIView):
             refresh = RefreshToken.for_user(user)
             return Response({
                 'refresh': str(refresh),
-                'access': str(refresh.access_token)
+                'access': str(refresh.access_token),
             })
         else:
             return Response({'detail': 'Invalid credentials'}, status=400)
@@ -40,24 +41,20 @@ class UserListCreateView(generics.ListCreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
-
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
-
 
 class SensorListCreateView(generics.ListCreateAPIView):
     queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
     permission_classes = [IsAuthenticated]
 
-
 class SensorDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
     permission_classes = [IsAuthenticated]
-
 
 class DataListCreateView(generics.ListCreateAPIView):
     queryset = Data.objects.all()
@@ -69,12 +66,10 @@ class DataListCreateView(generics.ListCreateAPIView):
         sensor = Sensor.objects.get(pk=sensor_id)
         serializer.save(sensor=sensor)
 
-
 class DataDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Data.objects.all()
     serializer_class = DataSerializer
     permission_classes = [IsAuthenticated]
-
 
 class AlertListCreateView(generics.ListCreateAPIView):
     queryset = Alert.objects.all()
@@ -85,7 +80,6 @@ class AlertListCreateView(generics.ListCreateAPIView):
         sensor_id = self.kwargs['sensor_id']
         sensor = Sensor.objects.get(pk=sensor_id)
         serializer.save(sensor=sensor)
-
 
 class AlertDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Alert.objects.all()
